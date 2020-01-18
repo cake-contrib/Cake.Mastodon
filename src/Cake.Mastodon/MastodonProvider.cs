@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -43,7 +45,11 @@ namespace Cake.Mastodon
             return SendRequestAsync($"{hostName}/api/v1/statuses", data, idempotencyKey, ct);
         }
         
-
+        static string DictionaryToJson(Dictionary<string, string> data)
+        {
+            var entries = data.Select(d => $"\"{d.Key}\": \"{d.Value}\"");
+            return $"{{{string.Join(",", entries)}}}";
+        }
         async Task<TootResponse> SendRequestAsync(string url, Dictionary<string, string> data, string idempotencyKey, CancellationToken ct)
         {
             var request = new HttpRequestMessage(HttpMethod.Post, url);
@@ -52,6 +58,7 @@ namespace Cake.Mastodon
             {
                 request.Headers.Add("Idempotency-Key", idempotencyKey);
             }
+            request.Content = new StringContent(DictionaryToJson(data), Encoding.UTF8, "application/json");
             var response = await httpClient.SendAsync(request, ct);
             string body = await response.Content.ReadAsStringAsync();
             return new TootResponse(response.IsSuccessStatusCode, response.StatusCode, response.ReasonPhrase, body);

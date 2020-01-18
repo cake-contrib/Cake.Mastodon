@@ -1,8 +1,6 @@
 ﻿using Cake.Core;
 using Cake.Core.Annotations;
 using System;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Cake.Mastodon
 {
