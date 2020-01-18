@@ -29,7 +29,6 @@ namespace Cake.Mastodon
         /// Idempotency keys are stored for up to 1 hour, and can be any arbitrary string. Consider using a hash or UUID generated client-side.
         /// </param>
         /// <param name="visibility">Visibility of the posted status.</param>
-        /// <param name="ct">The cancellation token to cancel operation.</param>
         /// <example>
         /// <code>
         ///     string accessToken = EnvironmentVariable("MASTODON_ACCESS_TOKEN")
