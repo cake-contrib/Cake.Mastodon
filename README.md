@@ -1,4 +1,4 @@
-﻿# Cake.Kubectl
+﻿# Cake.Mastodon
 
 A Cake AddIn that extends Cake with ability to post messages to [Mastodon](https://joinmastodon.org/) using Mastodon REST API.
 
