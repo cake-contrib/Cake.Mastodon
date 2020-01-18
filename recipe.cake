@@ -6,9 +6,9 @@ BuildParameters.SetParameters(
     context: Context, 
     buildSystem: BuildSystem,
     sourceDirectoryPath: "./src",
-    title: "Cake.Kubectl",
+    title: "Cake.Mastodon",
     repositoryOwner: "cake-contrib",
-    repositoryName: "Cake.Kubectl",
+    repositoryName: "Cake.Mastodon",
     appVeyorAccountName: "cakecontrib",
 	shouldRunDupFinder: false,
     shouldRunInspectCode: false,
@@ -18,7 +18,7 @@ BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(
     context: Context,
-    dupFinderExcludePattern: new string[] { BuildParameters.RootDirectoryPath + "/src/Cake.Kubectl.Tests/*.cs" },
+    dupFinderExcludePattern: new string[] { BuildParameters.RootDirectoryPath + "/src/Cake.Mastodon.Tests/*.cs" },
     testCoverageFilter: "+[*]* -[nunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* ",
     testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
     testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
