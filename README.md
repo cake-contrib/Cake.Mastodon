@@ -17,14 +17,11 @@ To use the addin just add it to Cake call the aliases and configure any settings
 
 ```csharp
 #addin "Cake.Mastodon"
-
 ...
-
+string accessToken = EnvironmentVariable("MASTODON_ACCESS_TOKEN");
 // How to update the status (send a toot)
-Task("Create")
-    .Does(() => {
-        MastodonSendToot(string token, string status);
-    });
+var result = MastodonSendToot("https://botsin.space", accessToken, "Merely testing three", "I1");
+Information($"Success: {result.IsSuccess} Code: {result.StatusCode} Phrase: {result.ReasonPhrase} Body: {result.Body}");
 ```
 
 ## Credits

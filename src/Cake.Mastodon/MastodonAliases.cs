@@ -30,6 +30,14 @@ namespace Cake.Mastodon
         /// </param>
         /// <param name="visibility">Visibility of the posted status.</param>
         /// <param name="ct">The cancellation token to cancel operation.</param>
+        /// <example>
+        /// <code>
+        ///     string accessToken = EnvironmentVariable("MASTODON_ACCESS_TOKEN")
+        /// 
+        ///     var result = MastodonSendToot("https://botsin.space", accessToken, "Merely testing three", "I1");
+        ///     Information($"Success: {result.IsSuccess} Code: {result.StatusCode} Phrase: {result.ReasonPhrase} Body: {result.Body}");
+        /// </code>
+        /// </example>
         [CakeMethodAlias]
         [CakeNamespaceImport("Cake.Mastodon")]
         public static TootResponse MastodonSendToot(this ICakeContext context, string hostName, string accessToken, string text, string idempotencyKey = null, 
