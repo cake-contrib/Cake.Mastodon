@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net50;netstandard2.0;net46</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0;</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -12,13 +12,12 @@
     <PackageId>Cake.Mastodon</PackageId>
     <Title>Cake.Mastodon</Title>
     <Description>Cake Addin that exends Cake with ability to post messages to Mastodon, using the Mastodon REST API.</Description>
-    <PackageTags>Cake Script Build Mastodon cake-addin</PackageTags>
+    <PackageTags>Cake Script Build Mastodon cake-addin cake-build addin</PackageTags>
     <Authors>Miha Markic</Authors>
     <Owners>Miha Markic, cake-contrib</Owners>
     <RepositoryUrl>https://github.com/cake-contrib/Cake.Mastodon.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.Mastodon</PackageProjectUrl>
-    <PackageIcon>icon.png</PackageIcon>
     <!-- for compatibility only -->
     <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
@@ -33,18 +32,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Cake.Core" Version="1.0.0" PrivateAssets="All" />
-    <PackageReference Include="CakeContrib.Guidelines" Version="0.5.0">
+    <PackageReference Include="Cake.Core" Version="2.0.0" PrivateAssets="All" />
+    <PackageReference Include="CakeContrib.Guidelines" Version="1.4.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="icon.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 </Project>
