@@ -236,5 +236,3 @@ src/tools
 .cr/
 AppCenterParser/
 integration-test/
-tools/*
-!tools/packages.config
