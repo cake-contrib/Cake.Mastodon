@@ -39,7 +39,7 @@ namespace Cake.Mastodon
         /// </example>
         [CakeMethodAlias]
         [CakeNamespaceImport("Cake.Mastodon")]
-        public static TootResponse MastodonSendToot(this ICakeContext context, string hostName, string accessToken, string text, string idempotencyKey = null, 
+        public static TootResponse MastodonSendToot(this ICakeContext context, string hostName, string accessToken, string text, string? idempotencyKey = null, 
             TootVisibility visibility = TootVisibility.Public)
         {
             if (context == null)
