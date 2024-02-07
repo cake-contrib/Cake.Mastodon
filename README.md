@@ -37,5 +37,6 @@ Information($"Success: {result.IsSuccess} Code: {result.StatusCode} Phrase: {res
 
 ## Credits
 
-Brought to you by [Miha Markic](https:
-//github.com/MihaMarkic) ([@MihaMarkic](https://mastodon.social/@mihamarkic)) and contributors. 
+Brought to you by [Miha Markic](https://github.com/MihaMarkic) and contributors. 
+
+![Mastodon Follow](https://img.shields.io/mastodon/follow/001030236)
