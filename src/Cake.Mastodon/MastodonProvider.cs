@@ -35,7 +35,7 @@ namespace Cake.Mastodon
         /// <summary>
         /// Sends a toot with the supplied text and returns the response from the Mastodon REST API along with status code and reason phrase.
         /// </summary>
-        public Task<TootResponse> Toot(string text, string idempotencyKey = null, TootVisibility visibility = TootVisibility.Public, CancellationToken ct = default)
+        public Task<TootResponse> Toot(string text, string? idempotencyKey = null, TootVisibility visibility = TootVisibility.Public, CancellationToken ct = default)
         {
             var data = new Dictionary<string, string> {
                 { "status", text },
@@ -50,7 +50,7 @@ namespace Cake.Mastodon
             var entries = data.Select(d => $"\"{d.Key}\": \"{d.Value}\"");
             return $"{{{string.Join(",", entries)}}}";
         }
-        async Task<TootResponse> SendRequestAsync(string url, Dictionary<string, string> data, string idempotencyKey, CancellationToken ct)
+        async Task<TootResponse> SendRequestAsync(string url, Dictionary<string, string> data, string? idempotencyKey, CancellationToken ct)
         {
             var request = new HttpRequestMessage(HttpMethod.Post, url);
             request.Headers.Add("Authorization", $"Bearer {accessToken}");
