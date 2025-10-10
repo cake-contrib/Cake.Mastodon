@@ -12,6 +12,10 @@ A Cake AddIn that extends Cake with ability to post messages to [Mastodon](https
 
 ## Important
 
+2.0.0
+* References Cake 5.0.0
+* Supports .NET 8.0 and 9.0
+
 1.2.0 
 * References Cake 4.0.0
 * Drops support for .NET Framework
