@@ -1,15 +1,12 @@
-$ErrorActionPreference = 'Stop'
+###########################################################################
+# INSTALL CAKE
+###########################################################################
 
-$SCRIPT_NAME = "recipe.cake"
+& dotnet tool restore
 
-Write-Host "Restoring .NET Core tools"
-dotnet tool restore
-if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+###########################################################################
+# RUN BUILD SCRIPT
+###########################################################################
+& dotnet cake recipe.cake $args
 
-Write-Host "Bootstrapping Cake"
-dotnet cake $SCRIPT_NAME --bootstrap
-if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-
-Write-Host "Running Build"
-dotnet cake $SCRIPT_NAME @args
-if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+exit $LASTEXITCODE
