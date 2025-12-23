@@ -238,6 +238,7 @@ AppCenterParser/
 integration-test/
 tools/*
 !tools/packages.config
+BuildArtifacts/
 
 # IntelliJ Idea/Rider
 # User specific
